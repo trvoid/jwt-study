@@ -1,3 +1,6 @@
+Java/commons-codec-1.14/
+Java/*.class
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
