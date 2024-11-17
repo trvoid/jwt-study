@@ -28,6 +28,9 @@ def create_jwt_token(header_obj_str, payload_obj_str, secret):
     m.update(header_plus_payload.encode('utf-8'))
     d = m.digest()
     signature = base64_encode(d)
+    print('** Signature (algorithm: HS256) **')
+    print(f'Byte size: {len(d)}')
+    print(f'Base64 encoded: {signature}')
 
     jwt_token = f'{header_plus_payload}.{signature}'
     return jwt_token
@@ -48,5 +51,5 @@ payload_obj_str = '{\
 secret = 'my-secret'
 
 jwt_token = create_jwt_token(header_obj_str, payload_obj_str, secret)
-print('** JWT token **')
+print('** JWT token (structure: header.payload.signature) **')
 print(jwt_token)
